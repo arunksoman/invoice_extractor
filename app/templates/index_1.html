@@ -1,0 +1,41 @@
+{% include 'layout.html' %} {% block body %}
+<div class="w3-content w3-padding" style="max-width: 1564px">
+  <div class="w3-display-middle">
+    <div class="w3-card-4 w3-white">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div
+        class="w3-panel w3-{{category}} w3-display-container"
+        style="margin-bottom: 0px"
+      >
+        <span
+          onclick="this.parentElement.style.display='none'"
+          class="w3-button w3-small w3-display-topright"
+          >&times;</span
+        >
+        <p>{{ message }}</p>
+      </div>
+      {% endfor %} {% endif %} {% endwith %}
+      <div class="w3-container w3-teal">
+        <h2>Upload File</h2>
+      </div>
+      <div class="w3-container w3-padding-16">
+        <form
+          action="{{ url_for('main_bp.index') }}"
+          enctype="multipart/form-data"
+          method="POST"
+        >
+          <input
+            class="w3-input"
+            style="border: 0px"
+            type="file"
+            name="file"
+            placeholder="Upload File"
+          />
+          <input type="submit" class="w3-button w3-teal" value="Upload" />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

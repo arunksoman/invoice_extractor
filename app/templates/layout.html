@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Extractor</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body bgcolor="PaleTurquoise">
+    {% block header %}
+    <div class="w3-top" id="navbar">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+            <a href="#home" class="w3-bar-item w3-button"><b>Invoice</b> Extractor </a>
+            <!-- Float links to the right. Hide them on small screens -->
+            <div class="w3-right w3-hide-small">
+                <a href="#about" class="w3-bar-item w3-button">About</a>
+                <!-- <a href="#contact" class="w3-bar-item w3-button">Contact</a> -->
+            </div>
+        </div>
+    </div>
+    {% endblock header %}
+    {% block body%}
+    {{content}}
+    {% endblock body %}
+    {% block script %}
+    <script src="https://unpkg.com/htmx.org@1.8.4"
+        integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV"
+        crossorigin="anonymous"></script>
+    {% endblock script %}
+</body>
+
+</html>
